@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <section class="col-12 show">
+                <h3 class="show">Shopping Cart</h3>
+                <form action="/factory" id="myform" method="post">
+                    <table id="clear-cart">
+                        <thead>
+                            <tr>
+                                <td>Pizza Size</td>
+                                <td>Quantity</td>
+                                <td>Price</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Small Pizza</td>
+                                <td class="joinTags">
+                                    <input type="submit" value="+" id="small" class="button"
+                                        onclick="document.getElementById('myform').action+='/'+this.id;return true;">
+                                    <input type="text" name="quantity" readonly id="small_pizza" placeholder="0"
+                                        value="{{counter.small}}">
+                                    <input type="submit" value="-" id="min_small_pizza" class="button"
+                                        onclick="document.getElementById('myform').action+='/'+this.id;return true;">
+                                </td>
+                                <td>R<span step=".01" class="small_pizza_price">{{totals.smallPizza}}</td>
+                                <td>
+                                    <submit class="_btn trash_smallBtn"><i class="fa fa-trash"></i></submit>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Medium Pizza</td>
+                                <td class="joinTags">
+                                    <input type="submit" value="+" id="medium" class="button"
+                                        onclick="document.getElementById('myform').action+='/'+this.id;return true;">
+                                    <input type="text" name="quantity" readonly id="medium_pizza" placeholder="0"
+                                        value="{{counter.medium}}">
+                                    <input type="submit" value="-" id="min_mid_pizza" class="button"
+                                        onclick="document.getElementById('myform').action+='/'+this.id;return true;">
+                                </td>
+                                <td>R<span step=".01" class="medium_pizza_price">{{totals.midPizza}}</td>
+                                <td>
+                                    <submit class="_btn trash_mediumBtn"><i class="fa fa-trash"></i></submit>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Large Pizza</td>
+                                <td class="joinTags">
+                                    <input type="submit" value="+" id="large" class="button"
+                                        onclick="document.getElementById('myform').action+='/'+this.id;return true;">
+                                    <input type="text" name="quantity" readonly id="large_pizza" placeholder="0"
+                                        value="{{counter.large}}">
+                                    <input type="submit" value="-" id="min_large_pizza" class="button"
+                                        onclick="document.getElementById('myform').action+='/'+this.id;return true;">
+                                </td>
+                                <td>R<span step=".01" class="large_pizza_price">{{totals.largePizza}}</td>
+                                <td>
+                                    <submit class="_btn trash_largeBtn"><i class="fa fa-trash"></i></submit>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Total cost</td>
+                                <td></td>
+                                <td><input type="text" class="cost total-cost left" step=".01" readonly
+                                        class="totalSettings" placeholder={{totals.grandTotal}}></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    {{!-- <div class="center space-between-elements theMessage">
+                        We will display a message here when the submit is pressed...
+                    </div> --}}
+                    <div class="space-between-elements payment" style="display: none;">
+                        <label for="payment" class="center-label pay"><em>Payment amount:</em></label>
+                        <input type="text" name="pay" id="pay" class="cost">
+                    </div>
+                    <input type="submit" value="Checkout" id="check" class="padding center2 checkout">
+            </section>
+        </div>
+        <div class="row">
+                <section class="col-4 small_pizza">
+                    <h3>Small Pizza</h3>
+                    <img width=150
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLpK6Cank9ZGS5Rq0iX2Y-jxGulKn1raJVlQ&usqp=CAU"
+                        alt="n/a">
+                    <p>
+                        R29.90 <br>
+                        Three layers & a crust crammed with chicken cheese grillers: our secret cream cheese, chicken,
+                        mushroom, diced tomato, onion, mozzarella, tomato & herb pizza sauce, topped with Debonairs
+                        sauce, cheddar & mozzarella
+                    </p>
+                    <input type="submit" id="small" value="Add to order" class="small center2 override_center"
+                        onclick="document.getElementById('myform').action+='/'+this.id;return true;">
+                </section>
+                <section class="col-4 medium_pizza">
+                    <h3>Medium Pizza</h3>
+                    <img width=200 width=150
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLpK6Cank9ZGS5Rq0iX2Y-jxGulKn1raJVlQ&usqp=CAU"
+                        alt="n/a">
+                    <p>
+                        R69.90 <br>
+                        Three layers & a crust crammed with chicken cheese grillers: our secret cream cheese, chicken,
+                        mushroom, diced tomato, onion, mozzarella, tomato & herb pizza sauce, topped with Debonairs
+                        sauce, cheddar & mozzarella
+                    </p>
+                    <input type="submit" id="medium" value="Add to order" class="medium center2 override_center"
+                        onclick="document.getElementById('myform').action+='/'+this.id;return true;">
+                </section>
+                <section class="col-4 large_pizza">
+                    <h3>Large Pizza</h3>
+                    <img width=200 width=150
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLpK6Cank9ZGS5Rq0iX2Y-jxGulKn1raJVlQ&usqp=CAU"
+                        alt="n/a">
+                    <p>
+                        R100.90 <br>
+                        Three layers & a crust crammed with chicken cheese grillers: our secret cream cheese, chicken,
+                        mushroom, diced tomato, onion, mozzarella, tomato & herb pizza sauce, topped with Debonairs
+                        sauce, cheddar & mozzarella
+                    </p>
+                    <input type="submit" id="large" value="Add to order" class="large center2 override_center"
+                        onclick="document.getElementById('myform').action+='/'+this.id;return true;">
+                </section>
+            </form>
+        </div>
+    </div>
+    <footer class="border">
+        <p>
+            &phone; Contact us at: (021)-541-1000 <br>
+            &#9993; Email us at: info@perfectpizza.co.za
+        </p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,381 @@
+
+/**
+*** SIMPLE GRID
+*** (C) ZACH COLE 2016
+**/
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic);
+
+body {
+  /* background: #33334d; */
+  color: #222;
+  line-height: normal;
+}
+
+/* ROOT FONT STYLES */
+
+* {
+  font-family: 'Lato', Helvetica, sans-serif;
+  color: #333447;
+  /* line-height: 1.5; */
+}
+
+/* TYPOGRAPHY */
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.375rem;
+}
+
+h4 {
+  font-size: 1.125rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.875rem;
+}
+
+p {
+  font-size: 1.125rem;
+  font-weight: 200;
+  line-height: 1.8;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-regular {
+  font-weight: 400;
+}
+
+.font-heavy {
+  font-weight: 700;
+}
+
+/* POSITIONING */
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.justify {
+  text-align: justify;
+}
+
+/* ==== GRID SYSTEM ==== */
+
+.container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  position: relative;
+  width: 100%;
+}
+
+.row [class^="col"] {
+  float: left;
+  margin: 0.5rem 2%;
+  min-height: 0.125rem;
+}
+
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+  width: 96%;
+  box-shadow: 10px 10px 10px grey;
+}
+
+.col-1-sm {
+  width: 4.33%;
+}
+
+.col-2-sm {
+  width: 12.66%;
+}
+
+.col-3-sm {
+  width: 21%;
+}
+
+.col-4-sm {
+  width: 29.33%;
+}
+
+.col-5-sm {
+  width: 37.66%;
+}
+
+.col-6-sm {
+  width: 46%;
+}
+
+.col-7-sm {
+  width: 54.33%;
+}
+
+.col-8-sm {
+  width: 62.66%;
+}
+
+.col-9-sm {
+  width: 71%;
+}
+
+.col-10-sm {
+  width: 79.33%;
+}
+
+.col-11-sm {
+  width: 87.66%;
+}
+
+.col-12-sm {
+  width: 96%;
+}
+
+.row::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.hidden-sm {
+  display: none;
+}
+.center-label{
+  margin-left: 24%;
+}
+
+
+@media only screen and (max-width: 768px) {  
+  .container {
+    width: 80%;
+  }
+  .center2{
+    margin-left: 32.5vw;
+  margin-bottom: 1vw;
+  }
+}
+
+@media only screen and (min-width: 768px) {  
+  .col-1 {
+    width: 4.33%;
+  }
+  section img{
+    width: 50%;
+    height: auto;
+  }
+  .col-2 {
+    width: 12.66%;
+  }
+
+  .col-3 {
+    width: 21%;
+  }
+
+  .col-4 {
+    width: 29.33%;
+  }
+
+  .col-5 {
+    width: 37.66%;
+  }
+
+  .col-6 {
+    width: 46%;
+  }
+
+  .col-7 {
+    width: 54.33%;
+  }
+
+  .col-8 {
+    width: 62.66%;
+  }
+
+  .col-9 {
+    width: 71%;
+  }
+
+  .col-10 {
+    width: 79.33%;
+  }
+
+  .col-11 {
+    width: 87.66%;
+  }
+
+  .col-12 {
+    width: 96%;
+  }
+
+  .hidden-sm {
+    display: block;
+  }
+  .override_center{
+    margin-left: 6vw;
+    margin-bottom: 1vw;
+  }
+}
+@media only screen and (min-width: 60em) { /* 960px */
+  .container {
+    width: 75%;
+    max-width: 60rem;
+  }
+  .center2{
+    margin-left: 31.2vw;
+  margin-bottom: 1vw;
+  }
+  .override_center{
+    margin-left: 6vw;
+    margin-bottom: 1vw;
+  }
+}
+@media only screen and (min-width:75em) {
+   .center2{
+    margin-left: 47%;
+  margin-bottom: 1vw;
+  }
+  .override_center{
+    margin-left: 6vw;
+    margin-bottom: 1vw;
+  }
+  .center-label{
+    margin-left: 20vw;
+  }
+}
+body{
+  /* background-color: #F9CFF2; */
+  background-color: wheat;
+}
+footer{
+  text-align: center;
+  background-color: #CEFF1A;
+}
+h2, h3{
+  text-align: center;
+}
+.small_pizza{
+  background-color: #A1CDF4;
+}
+.medium_pizza{
+  background-color: #F78154;
+}
+.large_pizza{
+ background-color: #3685B5;
+}
+section p{
+  padding-left: 0.5em;
+}
+section img{
+  padding-left: 3em;
+}
+
+input[name="quantity"]{
+  width: 35px;
+  text-align: center;
+  outline-color: white;
+  border: navajowhite;
+   }
+   input[name="cost"]{
+     text-align: left;
+     height: 20px;
+     font-weight: 900;
+   }
+.joinTags{
+     display: flex;
+   }
+
+.button{
+  border: none;
+  width: 32px;
+  margin-top: 1px;
+  background-color: #f1f1f1;
+  margin-bottom: 1px;
+} 
+
+#bola-textbox{
+  width: 10em;
+}
+
+table{
+  padding: 5px;
+  width: 55%;
+  margin-left: 14vw;
+}
+
+._btn {
+  background-color: initial;
+  border: none;
+  cursor: pointer;
+}
+
+input.cost{
+  width: 80px;
+  box-shadow: 8px 8px 8px grey;
+  outline-color: white;
+  border: navajowhite;
+}
+
+.space-between-elements{
+  margin-bottom: 15px;
+  padding: 3px;
+}
+/*Shake on hover*/
+/* .btn:hover{
+  animation: shake 0.10s;
+  animation-iteration-count: infinite;
+}
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+} */
+ .padding{
+  margin-top: 15px;
+ }
+
+ .green{
+   color: green;
+ }
+
+ .red{
+   color: crimson;
+ }
+
+.home{
+  width: 70%;
+  height: 100%;
+}
