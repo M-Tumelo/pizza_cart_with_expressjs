@@ -10,13 +10,58 @@
     <div class="container">
         <div class="row">
             <div class="col-3-sm">
-            <p>Are you <strong>hungry?</strong>
-    <br>
-    Don't stress we got you!!! &#128521 <br> Just click the button to see what we have in store for you
-    </p>
-    <a href="/cart"><input type="submit" value="Order now"></a> 
+             <div class="tabs">
+
+    <input type="radio" name="tabs" id="tabone" checked="checked">
+    <label for="tabone">Login</label>
+    <div class="tab">
+      <h1>Login</h1>
+        <form action="/login" style="margin:1em">
+    <div class="input-container">
+      <i class="fa fa-envelope icon"></i>
+      <input class="input-field" type="text" required placeholder="Email" name="email">
+    </div>
+    
+    <div class="input-container">
+      <i class="fa fa-lock icon"></i>
+      <input class="input-field" type="password" required placeholder="Password" name="psw">
+    </div>
+        <p>Have you forgotten your <a href="#" ><strong>password</strong></a>?</p>
+    <button type="submit" class="btn">Login</button>
+    <p>Don't have an account? &nbsp;<a href="">Sign up</a></p>
+  </form>
+	  </div>
+
+    <input type="radio" name="tabs" id="tabtwo">
+    <label for="tabtwo">Register</label>
+    <div class="tab">
+      <h1>Register</h1>
+      <form action="/register" style="margin:1em">
+    <div class="input-container">
+      <i class="fa fa-user icon"></i>
+      <input class="input-field" type="text" required placeholder="Name" name="name">
+    </div>
+  
+    <div class="input-container">
+      <i class="fa fa-envelope icon"></i>
+      <input class="input-field" type="text" required placeholder="Email" name="email">
+    </div>
+    
+    <div class="input-container">
+      <i class="fa fa-lock icon"></i>
+      <input class="input-field" type="password" required placeholder="Password" name="psw">
+    </div>
+  
+    <div class="input-container">
+        <i class="fa fa-lock icon"></i>
+        <input class="input-field" type="password" required placeholder="Retype Password" name="re-psw">
+      </div>
+    <button type="submit" class="btn">Register</button>
+  </form>
+    </div>    
+  </div>
      </div>
-    <img class="col-9-sm home" src="img/pizza.png" alt="home">
+    {{!-- <img class="col-9-sm home" src="img/pizza.png" alt="home"> --}}
    
     </div>
     </div>
