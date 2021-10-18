@@ -7,9 +7,9 @@ describe('factory_function', function(){
     const pizza_cart = pizza_factory();
 
     it('should be able to add orders, when the button "Add to order - pizza-size" is clicked', function(){
-        pizza_cart.recordAction('smallz');
-        pizza_cart.recordAction('mediumz');
-        pizza_cart.recordAction('largee');
+        pizza_cart.recordAction('small');
+        pizza_cart.recordAction('medium');
+        pizza_cart.recordAction('large');
         assert.deepEqual({
             large: 1, 
             medium: 1, 
@@ -25,10 +25,10 @@ describe('factory_function', function(){
     it('should be able to add and give the right totals', function(){
         const pizza_cart = pizza_factory();
         
-        pizza_cart.recordAction('smallz');
-        pizza_cart.recordAction('smallz');
-        pizza_cart.recordAction('mediumz');
-        pizza_cart.recordAction('largee');
+        pizza_cart.recordAction('small');
+        pizza_cart.recordAction('small');
+        pizza_cart.recordAction('medium');
+        pizza_cart.recordAction('large');
 
         assert.deepEqual({
             smallPizza : 59.80, 
@@ -42,8 +42,8 @@ describe('factory_function', function(){
     it('should be able to minus and display the right totals', function(){
         const pizza_cart = pizza_factory();
         
-        pizza_cart.recordAction('smallz');
-        pizza_cart.recordAction('smallz');
+        pizza_cart.recordAction('small');
+        pizza_cart.recordAction('small');
         pizza_cart.recordAction('min_small_pizza');
 
         assert.equal(29.90, pizza_cart.totals().grandTotal);
