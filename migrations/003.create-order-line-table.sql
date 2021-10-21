@@ -4,5 +4,6 @@ create table order_line (
 	total_price text DEFAULT '0.00',
     pizza_size text,
 	quantity integer default 0,
-	order_id INTEGER not null
+	order_id INTEGER not null, 
+	date text 
 );

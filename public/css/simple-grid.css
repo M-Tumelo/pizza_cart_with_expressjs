@@ -376,10 +376,35 @@ input.cost{
  }
 
 .home{
-  width: 70%;
-  height: 100%;
+  width: 600px;
+  height: 480px;
 }
 
+.away-from-margin{
+margin-left: 10em;
+}
+
+.move-left{
+ padding-left: 60em;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding-left:10px;
+}
+
+/* Clear floats after image containers */
+.roow::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
+}
 .tabs {
   display: flex;
   flex-wrap: wrap;
@@ -435,5 +460,15 @@ input.cost{
     margin-left: 50px;
   }
 }
- 
+.tafel th{
+  border-bottom: 1px solid black;
+  border-collapse: collapse;
+}
+.tafel td{
+  text-align: center;
+}
 
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}

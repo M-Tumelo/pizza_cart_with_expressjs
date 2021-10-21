@@ -1,76 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfect Pizza</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfect Pizza</title>
 </head>
+
 <body class="white">
-    <div class="container">
-        <div class="row">
-            <div class="col-3-sm">
-             <div class="tabs">
+  <div class="roow">
+      <div class="away-from-margin column">
+    <div class="tabs">
 
-    <input type="radio" name="tabs" id="tabone" checked="checked">
-    <label for="tabone">Login</label>
-    <div class="tab">
-      <h1>Login</h1>
+      <input type="radio" name="tabs" id="tabone" checked="checked">
+      <label for="tabone">Login</label>
+      <div class="tab">
+        <h1>Login</h1>
         <form action="/login" style="margin:1em">
-    <div class="input-container">
-      <i class="fa fa-envelope icon"></i>
-      <input class="input-field" type="text" required placeholder="Email" name="email">
-    </div>
-    
-    <div class="input-container">
-      <i class="fa fa-lock icon"></i>
-      <input class="input-field" type="password" required placeholder="Password" name="psw">
-    </div>
-        <p>Have you forgotten your <a href="#" ><strong>password</strong></a>?</p>
-    <button type="submit" class="btn">Login</button>
-    <p>Don't have an account? &nbsp;<a href="">Sign up</a></p>
-  </form>
-	  </div>
+          <div class="input-container">
+            <i class="fa fa-envelope icon"></i>
+            <input class="input-field" type="text" required placeholder="Email" name="email">
+          </div>
 
-    <input type="radio" name="tabs" id="tabtwo">
-    <label for="tabtwo">Register</label>
-    <div class="tab">
-      <h1>Register</h1>
-      <form action="/register" style="margin:1em">
-    <div class="input-container">
-      <i class="fa fa-user icon"></i>
-      <input class="input-field" type="text" required placeholder="Name" name="name">
-    </div>
-  
-    <div class="input-container">
-      <i class="fa fa-envelope icon"></i>
-      <input class="input-field" type="text" required placeholder="Email" name="email">
-    </div>
-    
-    <div class="input-container">
-      <i class="fa fa-lock icon"></i>
-      <input class="input-field" type="password" required placeholder="Password" name="psw">
-    </div>
-  
-    <div class="input-container">
-        <i class="fa fa-lock icon"></i>
-        <input class="input-field" type="password" required placeholder="Retype Password" name="re-psw">
+          <div class="input-container">
+            <i class="fa fa-lock icon"></i>
+            <input class="input-field" type="password" required placeholder="Password" name="psw">
+          </div>
+          <p>Have you forgotten your <a href="#"><strong>password</strong></a>?</p>
+          <button type="submit" class="btn">Login</button>
+          <p>Don't have an account? &nbsp;<a href="/register">Sign up</a></p>
+        </form>
       </div>
-    <button type="submit" class="btn">Register</button>
-  </form>
-    </div>    
+
+      <input type="radio" name="tabs" id="tabtwo">
+      <label for="tabtwo">Register</label>
+      <div class="tab">
+        <h1>Register</h1>
+        <form action="/register" style="margin:1em">
+          <div class="input-container">
+            <i class="fa fa-user icon"></i>
+            <input class="input-field" type="text" required placeholder="Name" name="name">
+          </div>
+
+          <div class="input-container">
+            <i class="fa fa-envelope icon"></i>
+            <input class="input-field" type="text" required placeholder="Email" name="email">
+          </div>
+
+          <div class="input-container">
+            <i class="fa fa-lock icon"></i>
+            <input class="input-field" type="password" required placeholder="Password" name="psw">
+          </div>
+
+          <div class="input-container">
+            <i class="fa fa-lock icon"></i>
+            <input class="input-field" type="password" required placeholder="Retype Password" name="re-psw">
+          </div>
+          <button type="submit" class="btn">Register</button>
+        </form>
+      </div>
+    </div>
   </div>
-     </div>
-    {{!-- <img class="col-9-sm home" src="img/pizza.png" alt="home"> --}}
-   
-    </div>
-    </div>
-    <div style="margin-top: 6.7em;"></div>
-<footer class="border">
+  <div class="column">
+  <img class="home" src="img/pizza.png" alt="home" style="padding-left: 15px;">
+  </div>
+  </div>
+  <div style="margin-top: 6.7em;"></div>
+  <footer class="border">
     <p>
-        &phone; Contact us at: (021)-541-1000 <br> 	
-        &#9993; Email us at: info@perfectpizza.co.za
+      &phone; Contact us at: (021)-541-1000 <br>
+      &#9993; Email us at: info@perfectpizza.co.za
     </p>
-</footer>
+  </footer>
 </body>
+
 </html>

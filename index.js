@@ -2,7 +2,9 @@ let express = require('express');
 
 let app = express();
 
-let fav = require('serve-favicon')
+let fav = require('serve-favicon');
+
+var moment = require('moment'); 
 
 const exphbs = require('express-handlebars');
 
@@ -53,8 +55,13 @@ open({
   });
 
   //Add to order - buttons reference
-  app.get('/order', function (req, res) {
-  //res.render('orders')
+  app.get('/order', async function (req, res) {
+    const order_line = await db.all('select * from order_line where order_id = ?', req.session.id);
+    const getTotal = await db.all('select * from orders where order_id = ?', req.session.id);
+  res.render('orders',{
+   order_line,
+   getTotal
+  });
   });
 
   // + and - buttons reference
@@ -97,12 +104,12 @@ open({
         await db.run(update_table, price, counter, update_pizza.id);
       }
       else {
-        await db.run('insert into order_line (total_price, pizza_size, quantity, order_id) values (?, ?, ?, ?)', price, req.params.id, counter, orderId);
+        await db.run('insert into order_line (total_price, pizza_size, quantity, order_id, date) values (?, ?, ?, ?, ?)', price, req.params.id, counter, orderId,moment(new Date()).format('DD-MM-YY'));
       }
     }
     else {
       await db.run('insert into orders (order_id, total) values (?, ?)', orderId, grandTotal);
-      await db.run('insert into order_line (total_price, pizza_size, quantity, order_id) values (?, ?, ?, ?)', price, req.params.id, counter, orderId);
+      await db.run('insert into order_line (total_price, pizza_size, quantity, order_id, date) values (?, ?, ?, ?, ?)', price, req.params.id, counter, orderId,moment(new Date()).format('DD-MM-YY'));
     }
     await db.run('update orders set total = ? where order_id =?', grandTotal, orderId);
     res.redirect('/cart')
@@ -123,7 +130,7 @@ open({
     console.log(sql)
     if (sql == null) {
       console.log('Incorrect Email or password');
-      res.redirect('/login');
+      res.redirect('/cart');
     }
     if (sql.psw !== req.session.psw) {
       console.log('Incorrect Email or password')
